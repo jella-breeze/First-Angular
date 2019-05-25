@@ -1,0 +1,30 @@
+
+<table class="">
+    <tr>
+        <td class="a">
+            <h3>Market House</h3>
+        </td>
+    </tr>
+    <tr>
+        <td class="b">
+            <h3>Your products are ({{count}})</h3>
+        </td>
+    </tr>
+    <tr>
+        <td class="c">
+            <p> Add the products to be sold</p>
+            <form>
+                <input type="text" class="products" [(ngModel)]="productList"><br><br>
+                <input type="submit" [value]="control" (click)="addProduct()">
+            </form>
+
+        </td>
+    </tr>
+    <tr>
+        <td class="d">
+            <p *ngFor="let list of lists">
+                {{ list }}
+            </p>
+        </td>
+    </tr>
+</table>

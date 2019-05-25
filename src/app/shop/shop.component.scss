@@ -1,0 +1,45 @@
+.container{
+    position: relative;
+    top:100px;
+    left:200px;
+    width:800px;
+    
+}
+.diff{
+    position: relative;
+}
+.container1{
+    background-color: #5c5d61;
+}
+.a{
+    position: relative;
+    background-color: #434346;
+    width:300px;
+    left:350px;
+    top:100px;
+    height:20px;
+}
+.b{
+    position: relative;
+    background-color: #434346;
+    width:150px;
+    left:590px;
+    top:37px;
+    height:20px;
+}
+.c{
+    position: relative;
+    background-color: #636260;
+    width:10px;
+    left:350px;
+    top:35px;
+    height:20px;
+}
+.d{
+    position: absolute;
+    background-color: #636260;
+    width:243px;
+    top:336px;
+    left:650px;
+    height:110px;
+}

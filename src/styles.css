@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+nav a.active{
+    color:black;
+}
+.table{
+    position: relative;
+    height: 100px;
+    width: 1160px;
+    top: 20px;
+    
+    background-color: #686b6f;
+}
+.register{
+    position: relative;
+    text-align: left;
+    background-color: #504f4f;
+    left:2px;
+    width: 1162px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    word-spacing: 8px;
+
+}
+.check{
+    font-size: 15px;
+}
+.table2{
+    position: relative;
+    left: 100px;
+}

@@ -1,0 +1,33 @@
+<div *ngIf="!name; else forminfo">
+    <form [formGroup]="loginForm" (ngSubmit)="addPost(loginForm.value)">
+        <table>
+            <tr>
+
+                <td class="login1">
+                    <h3>Login Page</h3>
+                    <label>
+                        UserName<input formControlName="name" type="text">
+                        <br><br>
+                    </label>
+                    <div class="alert" *ngIf="!loginForm.controls['name'].valid && loginForm.controls['name'].touched">
+                        This is required</div>
+                    <label>
+                        Password<Input formControlName="pass" type="password"><br><br>
+                    </label>
+                    <div class="alert" *ngIf="!loginForm.controls['pass'].valid && loginForm.controls['pass'].touched">
+                        This is required</div>
+                    <input type="submit" routerLink='/shop' value="submit" [disabled]="loginForm.valid"><br><br>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<ng-template #forminfo>
+    <div class="container">
+        <div class="smContainer">
+            <h1>{{ name }}</h1>
+            <h1>{{ pass }}</h1>
+            <p>{{ descripiton }}</p>
+        </div>
+    </div>
+</ng-template>
