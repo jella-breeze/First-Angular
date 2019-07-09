@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup} from '@angular/forms';
+import { FormBuilder} from '@angular/forms';
+import { StoreService} from '../store.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -6,20 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
+  pForm: FormGroup;
   count: number;
-  control: string='Add Product';
-  productList:string="Apple";
-  lists=[];
+  private lists: any;
 
-  constructor() { }
+  constructor(fb: FormBuilder, private storeService: StoreService, private route: Router) { }
 
   ngOnInit() {
-    this.count=this.lists.length;
+    this.count = this.lists.length;
   }
-  addProduct(){
-    this.lists.push(this.productList);
-    this.productList="";
-    this.count=this.lists.length;
+  addProducts() {
+   this.storeService.addProduct(this.pForm.value).subscribe(response => {'Products added'; });
   }
 
 }
