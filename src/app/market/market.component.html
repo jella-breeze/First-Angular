@@ -1,0 +1,32 @@
+
+<form addUser="ngForm" [formGroup]="loginForm" (ngSubmit)="addUser()">
+  <table>
+    <tr>
+
+      <td class="login1">
+        <h3>Register Page</h3>
+        <label>
+          Full Name <input formControlName="name" type="text">
+          <br><br>
+        </label>
+        <div class="alert" *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched">
+          This is required</div>
+        <label>
+          Quantity<input formControlName="quantity" type="text">
+          <br><br>
+        </label>
+        <div class="alert" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+          This is required</div>
+        <label>
+          Phone Number <input formControlName="password" type="password"><br><br>
+        </label>
+        <div class="alert" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+          This is required</div>
+        <label>
+          Price <input formControlName="password" type="password"><br><br>
+        </label>
+        <input type="submit" value="submit" [disabled]="!loginForm.valid"><br><br>
+      </td>
+    </tr>
+  </table>
+</form>
