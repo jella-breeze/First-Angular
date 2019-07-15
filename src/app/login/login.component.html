@@ -1,22 +1,25 @@
 <div *ngIf="!name; else forminfo">
-<form [formGroup]="loginForm" (ngSubmit)="addPost(loginForm.value)">
+<form addUser="ngForm" [formGroup]="loginForm" (submit)=addUser(loginForm.value)>
     <table>
         <tr>
-            
+
             <td class="login1">
                 <h3>Login Page</h3>  
+
                 <label>
                 UserName<input formControlName="name" type="text">
                 <br><br>
                 </label>
                 <div class="alert" *ngIf="!loginForm.controls['name'].valid && loginForm.controls['name'].touched">This is required</div>
+
                 <label>
-                Password<Input formControlName="pass" type="password"><br><br>
+                Password<input formControlName="pass" type="password"><br><br>
                 </label>
                 <div class="alert" *ngIf="!loginForm.controls['pass'].valid && loginForm.controls['pass'].touched">This is required</div>
-                    <input type="submit" routerLink='/list' value="submit" [disabled]="loginForm.valid"><br><br>
-                login as   
-                <input type="submit" routerLink='/admin' value="Login">
+                    <input type="submit" value="submit" [disabled]='loginForm.invalid'><br><br>
+
+                Register
+                <input type="submit" routerLink='/admin' value="here">
             </td>
         </tr>
     </table>

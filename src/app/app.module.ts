@@ -11,7 +11,17 @@ import { AdminComponent } from './admin/admin.component';
 import { ServiceComponent } from './service/service.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
-import { ConfirmComponent } from './confirm/confirm.component'
+import { ConfirmComponent } from './confirm/confirm.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {StoreService } from './store.service';
+import { UserShowComponent } from './user-show/user-show.component';
+import {ListGuardGuard} from './list-guard.guard';
+import { ProductListComponent } from './product-list/product-list.component';
+import { CustomerViewComponent } from './customer-view/customer-view.component';
+import { CustomerPurchaseComponent } from './customer-purchase/customer-purchase.component';
+import { MarketComponent} from './market/market.component';
+import { OrderListComponent } from './order-list/order-list.component';
+import { MycartComponent} from './mycart/mycart.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +32,24 @@ import { ConfirmComponent } from './confirm/confirm.component'
     AdminComponent,
     ServiceComponent,
     ListComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    UserShowComponent,
+    ProductListComponent,
+    CustomerViewComponent,
+    CustomerPurchaseComponent,
+      MarketComponent,
+      OrderListComponent,
+      MycartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+      HttpClientModule
   ],
-  providers: [],
+  providers: [StoreService, ListGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

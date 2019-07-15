@@ -10,9 +10,11 @@
     </table>
   </h1>
  </div>
+
 <nav class="register">
   <a routerLink="/login" routerLinkActive="active">login  </a>
   <a routerLink="/aboutUs" routerLinkActive="active">Contact Us</a>
 </nav>
-
+<div class="ap" [ngStyle]="{'background' : 'url(./assets/img/ap.jpg)'}">
 <router-outlet></router-outlet>
+</div>

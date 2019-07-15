@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {FormGroup, FormBuilder, Validators, NgForm} from '@angular/forms';
+import { StoreService } from '../store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,30 +9,44 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styles: [`
   .login1{
     position:relative;
-    background-color:#28292d;
+    background-color:#c6c9d4;
     left:420px;
-    top:100px;
     text-align:center;
+    box-shadow: 1px 2px 5px 4px;
   }
   `  ]
 })
 export class AdminComponent implements OnInit {
+
   loginForm: FormGroup;
-  post: any;
-  name: string = '';
-  pass: string = ''
-  constructor(fb: FormBuilder) {
+
+  constructor(fb: FormBuilder, private storeService: StoreService, private route: Router) {
+
     this.loginForm = fb.group({
-      'name': [null, Validators.required],
-      'pass': [null, Validators.required],
-      'validate': ''
+      username: [null, Validators.required],
+      email: [null, Validators.required],
+      password: [null, Validators.required],
+      validate: ''
     });
   }
 
   ngOnInit() { }
-  addPost(post: any) {
-    this.name = post.name;
-    this.pass = post.pass;
-  }
-
+  addUser() {
+      this.storeService.getUser().subscribe(response => {
+        const found = response.find(u => {
+          return u.username === this.loginForm.value.username && u.email === this.loginForm.value.email;
+        });
+        if (found) {
+          alert('already registered!');
+          this.route.navigate(['/admin']);
+        } else {
+          {
+            this.storeService.addUser(this.loginForm.value).subscribe(add  => {
+              this.route.navigate(['/login']);
+            });
+          }
+        }
+      });
+    }
 }
+

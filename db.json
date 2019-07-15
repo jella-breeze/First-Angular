@@ -1,0 +1,113 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "username": "mango",
+      "email": "mango@m.com",
+      "password": "mango",
+      "validate": "",
+      "id": 4
+    },
+    {
+      "username": "apple",
+      "email": "ap@ap.com",
+      "password": "ap",
+      "validate": "",
+      "id": 6
+    },
+    {
+      "username": "Tenzin",
+      "email": "op@op.com",
+      "password": "poiu",
+      "validate": "",
+      "id": 7
+    },
+    {
+      "username": "Sonam",
+      "email": "as@as.com",
+      "password": "apple",
+      "validate": "",
+      "id": 8
+    }
+  ],
+  "products": [
+    {
+      "product": "Raddish",
+      "price": "56",
+      "validate": "",
+      "id": 2
+    },
+    {
+      "product": "Apple",
+      "price": "50",
+      "validate": "",
+      "id": 4
+    },
+    {
+      "product": "orange",
+      "price": "55",
+      "validate": "",
+      "id": 5
+    },
+    {
+      "product": "Ginger",
+      "price": "100",
+      "validate": "",
+      "id": 6
+    },
+    {
+      "product": "babana",
+      "price": "1000",
+      "validate": "",
+      "id": 7
+    }
+  ],
+  "details": [
+    {
+      "name": "Phurpa",
+      "quantity": "5",
+      "number": "17428134",
+      "validate": "",
+      "id": 3
+    },
+    {
+      "name": "Dorji",
+      "quantity": "5",
+      "number": "17332940",
+      "validate": "",
+      "id": 4
+    },
+    {
+      "name": "Pema",
+      "quantity": "9",
+      "number": "17428134",
+      "validate": "",
+      "id": 5
+    },
+    {
+      "productId": "2",
+      "name": "Kezang",
+      "quantity": "34",
+      "number": "17772315",
+      "validate": "",
+      "id": 6
+    }
+  ],
+  "orderDetails": []
+}

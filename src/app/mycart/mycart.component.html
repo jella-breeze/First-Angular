@@ -1,0 +1,44 @@
+
+
+<div acc="ngbAccordion">
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th>Id</th>
+                                <th>Product_Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                            </tr>
+                            <tr *ngFor="let prod of productAddedTocart; let q = index">
+                                <td><img {{prod.ImageFile}} width="250px;" height="270px;"/>
+                                </td>
+                                <td class="text-center">{{prod.id}}-{{prod.name}}</td>
+                                <td>{{prod.price}}</td>
+                                <td>{{prod.quantity}}</td>
+                                <td>
+                                    <div class="form-inline">
+                                        <button type="button" (click)="onAddQuantity(prod)" class="btn btn-success">+
+                                        </button>
+                                        <input type="text" [ngModel]="prod.quantity"
+                                               (ngModelChange)="prod.quantity=$event" class="form-control form-inline"
+                                               id="count">
+                                        <button type="button" (click)="onRemoveQuantity(prod)" class="btn btn-danger">-
+                                        </button>
+                                    </div>
+                                </td>
+                                <td>{{prod.UnitPrice * prod.quantity}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+                <tr>
+                    <td  class="text-center" >
+                        <button type="button" class="btn btn-outline-success" (click)="ConfirmOrder()"><b>Confirm Order</b></button>
+                    </td>
+                </tr>
+
+</div>

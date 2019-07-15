@@ -1,30 +1,35 @@
+<a class="login" *ngIf="user">You are logged in as {{user['user'].username}}</a >
+<a class="login3" routerLink="/login">Logout</a>
 
 <form addUser="ngForm" [formGroup]="loginForm" (ngSubmit)="addUser()">
+
   <table>
     <tr>
-
       <td class="login1">
         <h3>Register Page</h3>
+        <label>
+          Product Id <input formControlName="productId" type="text">
+          <br><br>
+        </label>
+        <div class="alert" *ngIf="!loginForm.controls['productId'].valid && loginForm.controls['productId'].touched">
+          This is required</div>
         <label>
           Full Name <input formControlName="name" type="text">
           <br><br>
         </label>
-        <div class="alert" *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched">
+        <div class="alert" *ngIf="!loginForm.controls['name'].valid && loginForm.controls['name'].touched">
           This is required</div>
         <label>
-          Quantity<input formControlName="quantity" type="text">
+          Quantity<input formControlName="quantity" type="text" placeholder="kg">
           <br><br>
         </label>
-        <div class="alert" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+        <div class="alert" *ngIf="!loginForm.controls['quantity'].valid && loginForm.controls['quantity'].touched">
           This is required</div>
         <label>
-          Phone Number <input formControlName="password" type="password"><br><br>
+          Phone Number <input formControlName="number" type="text"><br><br>
         </label>
-        <div class="alert" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+        <div class="alert" *ngIf="!loginForm.controls['number'].valid && loginForm.controls['number'].touched">
           This is required</div>
-        <label>
-          Price <input formControlName="password" type="password"><br><br>
-        </label>
         <input type="submit" value="submit" [disabled]="!loginForm.valid"><br><br>
       </td>
     </tr>

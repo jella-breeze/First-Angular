@@ -7,47 +7,47 @@ import { Router } from '@angular/router';
   selector: 'app-market',
   templateUrl: './market.component.html',
   styles: [`
+    .login{
+      position: absolute;
+      top: 194px;
+      right: 0;
+      color: blue;
+    }
   .login1{
     position:relative;
     background-color:#c6c9d4;
     left:420px;
-    top:100px;
     text-align:center;
     box-shadow: 1px 2px 5px 4px;
+  }
+  .login3{
+    position: absolute;
+    right: 193px;
+    top: 193px;
   }
   `  ]
 })
 export class MarketComponent implements OnInit {
-
+  user: any;
   loginForm: FormGroup;
 
   constructor(fb: FormBuilder, private storeService: StoreService, private route: Router) {
+    this.user = this.storeService.user;
 
     this.loginForm = fb.group({
-      username: [null, Validators.required],
-      email: [null, Validators.required],
-      password: [null, Validators.required],
+      productId: [null, Validators.required],
+      name: [null, Validators.required],
+      quantity: [null, Validators.required],
+      number: [null, Validators.required],
       validate: ''
     });
   }
 
   ngOnInit() { }
   addUser() {
-    this.storeService.getUser().subscribe(response => {
-      const found = response.find(u => {
-        return u.username === this.loginForm.value.username && u.email === this.loginForm.value.email;
-      });
-      if (found) {
-        alert('already registered!');
-        this.route.navigate(['/admin']);
-      } else {
-        {
-          this.storeService.addUser(this.loginForm.value).subscribe(add  => {
-            this.route.navigate(['/login']);
+          this.storeService.addDetail(this.loginForm.value).subscribe(add  => {
+            this.route.navigate(['/purchase']);
           });
         }
-      }
-    });
-  }
 }
 

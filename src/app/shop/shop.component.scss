@@ -13,10 +13,9 @@
 }
 .a{
     position: relative;
-    background-color: #434346;
+    background-color: #bd8618;
     width:300px;
     left:350px;
-    top:100px;
     height:20px;
 }
 .b{
@@ -29,10 +28,9 @@
 }
 .c{
     position: relative;
-    background-color: #636260;
+    background-color: #bd8618;
     width:10px;
     left:350px;
-    top:35px;
     height:20px;
 }
 .d{
@@ -42,4 +40,15 @@
     top:336px;
     left:650px;
     height:110px;
+}
+.login{
+    position: absolute;
+    top: 194px;
+    right: 0;
+    color: blue;
+}
+.login1{
+    position: absolute;
+    right: 193px;
+    top: 193px;
 }
